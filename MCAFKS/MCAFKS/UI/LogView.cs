@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MCAFKS.ChatWatcher;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -6,7 +7,7 @@ using System.Windows.Forms;
 namespace MCAFKS.UI {
     public partial class LogView : Form {
         private readonly Config config;
-        private readonly ChatWatcher watcher;
+        private readonly ChatWatcher.ChatWatcher watcher;
 
         public LogView(Config config) {
             this.config = config;
@@ -15,7 +16,14 @@ namespace MCAFKS.UI {
                 openSettingsForm();
             }
 
-            watcher = new ChatWatcher(config.LogFile);
+            switch (config.SelectWatcher) {
+                case WatcherType.Standard:
+                    watcher = new StandardChatWatcher(config.LogFile);
+                    break;
+                case WatcherType.Regex:
+                    watcher = new RegexChatWatcher(config.LogFile);
+                    break;
+            }
 
             InitializeComponent();
         }

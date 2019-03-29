@@ -1,7 +1,13 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace MCAFKS.UI {
     public partial class Settings : Form {
+        private readonly KeyValuePair<string, WatcherType>[] watcherType = new KeyValuePair<string, WatcherType>[] {
+            new KeyValuePair<string, WatcherType>("通常",WatcherType.Standard),
+            new KeyValuePair<string, WatcherType>("正規表現",WatcherType.Regex)
+        };
+
         private readonly Config config;
 
         public Settings(Config config) {
@@ -13,6 +19,18 @@ namespace MCAFKS.UI {
         private void Settings_Load(object sender, System.EventArgs e) {
             textBoxLogPath.Text = config.LogFile;
             numericUpDownCheckInterval.Value = config.CheckInterval;
+
+            int index = 0;
+            for (int i = 0; i < watcherType.Length; i++) {
+                if (watcherType[i].Value == config.SelectWatcher) {
+                    index = i;
+                }
+            }
+            // データソース変更でindex変更イベントが起きる
+            selectWatcher.DataSource = watcherType;
+            selectWatcher.ValueMember = "Value";
+            selectWatcher.DisplayMember = "Key";
+            selectWatcher.SelectedIndex = index;
 
             textBoxColorUnread.BackColor = config.ColorUnread;
             textBoxColorAlreadyRead.BackColor = config.ColorAlreadyRead;
@@ -50,6 +68,10 @@ namespace MCAFKS.UI {
 
         private void buttonSettingsSave_Click(object sender, System.EventArgs e) {
             this.Close();
+        }
+
+        private void selectWatcher_SelectedIndexChanged(object sender, System.EventArgs e) {
+            config.SelectWatcher = watcherType[selectWatcher.SelectedIndex].Value;
         }
     }
 }

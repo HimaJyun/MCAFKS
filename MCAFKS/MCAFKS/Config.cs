@@ -4,6 +4,12 @@ using System.Drawing;
 using System.Xml.Serialization;
 
 namespace MCAFKS {
+    public enum WatcherType {
+        [XmlEnum("Standard")]
+        Standard,
+        [XmlEnum("Regex")]
+        Regex
+    }
 
     public class Config {
         /// <summary>
@@ -13,6 +19,7 @@ namespace MCAFKS {
 
         public string LogFile = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\.minecraft\logs\latest.log";
         public int CheckInterval = 5000;
+        public WatcherType SelectWatcher = WatcherType.Standard;
 
         [XmlIgnore]
         public Color ColorUnread = Color.Green;

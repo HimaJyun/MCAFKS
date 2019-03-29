@@ -63,7 +63,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChatWatcher.cs" />
+    <Compile Include="ChatWatcher\RegexChatWatcher.cs" />
+    <Compile Include="ChatWatcher\StandardChatWatcher.cs" />
+    <Compile Include="ChatWatcher\ChatWatcher.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="ConfigLoader.cs" />
     <Compile Include="Program.cs" />

@@ -1,7 +1,5 @@
-﻿namespace MCAFKS.UI
-{
-    partial class Settings
-    {
+﻿namespace MCAFKS.UI {
+    partial class Settings {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -11,10 +9,8 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -26,8 +22,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             this.groupBoxLogPath = new System.Windows.Forms.GroupBox();
             this.buttonLogPath = new System.Windows.Forms.Button();
@@ -35,6 +30,8 @@
             this.groupBoxCheckInterval = new System.Windows.Forms.GroupBox();
             this.numericUpDownCheckInterval = new System.Windows.Forms.NumericUpDown();
             this.groupBoxColor = new System.Windows.Forms.GroupBox();
+            this.textBoxColorAlreadyRead = new System.Windows.Forms.TextBox();
+            this.textBoxColorUnread = new System.Windows.Forms.TextBox();
             this.labelColorAlreadyRead = new System.Windows.Forms.Label();
             this.labelColorUnread = new System.Windows.Forms.Label();
             this.buttonColorAlreadyRead = new System.Windows.Forms.Button();
@@ -43,12 +40,13 @@
             this.checkBoxSkipSettings = new System.Windows.Forms.CheckBox();
             this.colorDialogSelect = new System.Windows.Forms.ColorDialog();
             this.openFileDialogLogPath = new System.Windows.Forms.OpenFileDialog();
-            this.textBoxColorUnread = new System.Windows.Forms.TextBox();
-            this.textBoxColorAlreadyRead = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.selectWatcher = new System.Windows.Forms.ComboBox();
             this.groupBoxLogPath.SuspendLayout();
             this.groupBoxCheckInterval.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCheckInterval)).BeginInit();
             this.groupBoxColor.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxLogPath
@@ -57,14 +55,14 @@
             this.groupBoxLogPath.Controls.Add(this.textBoxLogPath);
             this.groupBoxLogPath.Location = new System.Drawing.Point(12, 12);
             this.groupBoxLogPath.Name = "groupBoxLogPath";
-            this.groupBoxLogPath.Size = new System.Drawing.Size(260, 47);
+            this.groupBoxLogPath.Size = new System.Drawing.Size(280, 47);
             this.groupBoxLogPath.TabIndex = 0;
             this.groupBoxLogPath.TabStop = false;
             this.groupBoxLogPath.Text = "ログファイル";
             // 
             // buttonLogPath
             // 
-            this.buttonLogPath.Location = new System.Drawing.Point(179, 18);
+            this.buttonLogPath.Location = new System.Drawing.Point(199, 18);
             this.buttonLogPath.Name = "buttonLogPath";
             this.buttonLogPath.Size = new System.Drawing.Size(75, 23);
             this.buttonLogPath.TabIndex = 1;
@@ -76,7 +74,7 @@
             // 
             this.textBoxLogPath.Location = new System.Drawing.Point(6, 20);
             this.textBoxLogPath.Name = "textBoxLogPath";
-            this.textBoxLogPath.Size = new System.Drawing.Size(167, 19);
+            this.textBoxLogPath.Size = new System.Drawing.Size(187, 19);
             this.textBoxLogPath.TabIndex = 0;
             // 
             // groupBoxCheckInterval
@@ -84,7 +82,7 @@
             this.groupBoxCheckInterval.Controls.Add(this.numericUpDownCheckInterval);
             this.groupBoxCheckInterval.Location = new System.Drawing.Point(12, 65);
             this.groupBoxCheckInterval.Name = "groupBoxCheckInterval";
-            this.groupBoxCheckInterval.Size = new System.Drawing.Size(260, 43);
+            this.groupBoxCheckInterval.Size = new System.Drawing.Size(280, 43);
             this.groupBoxCheckInterval.TabIndex = 1;
             this.groupBoxCheckInterval.TabStop = false;
             this.groupBoxCheckInterval.Text = "更新のチェック間隔(ミリ秒)";
@@ -103,7 +101,7 @@
             0,
             0});
             this.numericUpDownCheckInterval.Name = "numericUpDownCheckInterval";
-            this.numericUpDownCheckInterval.Size = new System.Drawing.Size(248, 19);
+            this.numericUpDownCheckInterval.Size = new System.Drawing.Size(268, 19);
             this.numericUpDownCheckInterval.TabIndex = 0;
             this.numericUpDownCheckInterval.Value = new decimal(new int[] {
             1,
@@ -119,12 +117,30 @@
             this.groupBoxColor.Controls.Add(this.labelColorUnread);
             this.groupBoxColor.Controls.Add(this.buttonColorAlreadyRead);
             this.groupBoxColor.Controls.Add(this.buttonColorUnread);
-            this.groupBoxColor.Location = new System.Drawing.Point(12, 114);
+            this.groupBoxColor.Location = new System.Drawing.Point(12, 164);
             this.groupBoxColor.Name = "groupBoxColor";
-            this.groupBoxColor.Size = new System.Drawing.Size(260, 76);
+            this.groupBoxColor.Size = new System.Drawing.Size(280, 76);
             this.groupBoxColor.TabIndex = 0;
             this.groupBoxColor.TabStop = false;
             this.groupBoxColor.Text = "色の設定";
+            // 
+            // textBoxColorAlreadyRead
+            // 
+            this.textBoxColorAlreadyRead.Enabled = false;
+            this.textBoxColorAlreadyRead.Location = new System.Drawing.Point(92, 49);
+            this.textBoxColorAlreadyRead.Name = "textBoxColorAlreadyRead";
+            this.textBoxColorAlreadyRead.ReadOnly = true;
+            this.textBoxColorAlreadyRead.Size = new System.Drawing.Size(101, 19);
+            this.textBoxColorAlreadyRead.TabIndex = 7;
+            // 
+            // textBoxColorUnread
+            // 
+            this.textBoxColorUnread.Enabled = false;
+            this.textBoxColorUnread.Location = new System.Drawing.Point(92, 20);
+            this.textBoxColorUnread.Name = "textBoxColorUnread";
+            this.textBoxColorUnread.ReadOnly = true;
+            this.textBoxColorUnread.Size = new System.Drawing.Size(101, 19);
+            this.textBoxColorUnread.TabIndex = 6;
             // 
             // labelColorAlreadyRead
             // 
@@ -146,7 +162,7 @@
             // 
             // buttonColorAlreadyRead
             // 
-            this.buttonColorAlreadyRead.Location = new System.Drawing.Point(179, 47);
+            this.buttonColorAlreadyRead.Location = new System.Drawing.Point(199, 47);
             this.buttonColorAlreadyRead.Name = "buttonColorAlreadyRead";
             this.buttonColorAlreadyRead.Size = new System.Drawing.Size(75, 23);
             this.buttonColorAlreadyRead.TabIndex = 3;
@@ -156,7 +172,7 @@
             // 
             // buttonColorUnread
             // 
-            this.buttonColorUnread.Location = new System.Drawing.Point(179, 18);
+            this.buttonColorUnread.Location = new System.Drawing.Point(199, 18);
             this.buttonColorUnread.Name = "buttonColorUnread";
             this.buttonColorUnread.Size = new System.Drawing.Size(75, 23);
             this.buttonColorUnread.TabIndex = 2;
@@ -166,7 +182,7 @@
             // 
             // buttonSettingsSave
             // 
-            this.buttonSettingsSave.Location = new System.Drawing.Point(191, 196);
+            this.buttonSettingsSave.Location = new System.Drawing.Point(211, 246);
             this.buttonSettingsSave.Name = "buttonSettingsSave";
             this.buttonSettingsSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSettingsSave.TabIndex = 2;
@@ -177,7 +193,7 @@
             // checkBoxSkipSettings
             // 
             this.checkBoxSkipSettings.AutoSize = true;
-            this.checkBoxSkipSettings.Location = new System.Drawing.Point(12, 200);
+            this.checkBoxSkipSettings.Location = new System.Drawing.Point(12, 250);
             this.checkBoxSkipSettings.Name = "checkBoxSkipSettings";
             this.checkBoxSkipSettings.Size = new System.Drawing.Size(173, 16);
             this.checkBoxSkipSettings.TabIndex = 3;
@@ -193,29 +209,32 @@
             this.openFileDialogLogPath.Filter = "ログファイル(latest.log)|*.log";
             this.openFileDialogLogPath.Title = "開く";
             // 
-            // textBoxColorUnread
+            // groupBox1
             // 
-            this.textBoxColorUnread.Enabled = false;
-            this.textBoxColorUnread.Location = new System.Drawing.Point(92, 20);
-            this.textBoxColorUnread.Name = "textBoxColorUnread";
-            this.textBoxColorUnread.ReadOnly = true;
-            this.textBoxColorUnread.Size = new System.Drawing.Size(81, 19);
-            this.textBoxColorUnread.TabIndex = 6;
+            this.groupBox1.Controls.Add(this.selectWatcher);
+            this.groupBox1.Location = new System.Drawing.Point(12, 114);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(280, 44);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "チャット抽出の方法";
             // 
-            // textBoxColorAlreadyRead
+            // selectWatcher
             // 
-            this.textBoxColorAlreadyRead.Enabled = false;
-            this.textBoxColorAlreadyRead.Location = new System.Drawing.Point(92, 49);
-            this.textBoxColorAlreadyRead.Name = "textBoxColorAlreadyRead";
-            this.textBoxColorAlreadyRead.ReadOnly = true;
-            this.textBoxColorAlreadyRead.Size = new System.Drawing.Size(81, 19);
-            this.textBoxColorAlreadyRead.TabIndex = 7;
+            this.selectWatcher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.selectWatcher.FormattingEnabled = true;
+            this.selectWatcher.Location = new System.Drawing.Point(6, 18);
+            this.selectWatcher.Name = "selectWatcher";
+            this.selectWatcher.Size = new System.Drawing.Size(268, 20);
+            this.selectWatcher.TabIndex = 0;
+            this.selectWatcher.SelectedIndexChanged += new System.EventHandler(this.selectWatcher_SelectedIndexChanged);
             // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 231);
+            this.ClientSize = new System.Drawing.Size(304, 281);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.checkBoxSkipSettings);
             this.Controls.Add(this.buttonSettingsSave);
             this.Controls.Add(this.groupBoxColor);
@@ -233,6 +252,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCheckInterval)).EndInit();
             this.groupBoxColor.ResumeLayout(false);
             this.groupBoxColor.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,5 +276,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialogLogPath;
         private System.Windows.Forms.TextBox textBoxColorAlreadyRead;
         private System.Windows.Forms.TextBox textBoxColorUnread;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox selectWatcher;
     }
 }
